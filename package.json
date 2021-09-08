@@ -1,0 +1,8 @@
+{
+  "name": "node-meme-scraper",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/mtslks/node-meme-scraper",
+  "author": "Mathias Lukas <mathias.lukas@me.com>",
+  "license": "MIT"
+}
