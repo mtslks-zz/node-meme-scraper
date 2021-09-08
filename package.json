@@ -4,5 +4,10 @@
   "main": "index.js",
   "repository": "https://github.com/mtslks/node-meme-scraper",
   "author": "Mathias Lukas <mathias.lukas@me.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.10",
+    "node-fetch": "^3.0.0"
+  }
 }
