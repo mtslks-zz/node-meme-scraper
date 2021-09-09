@@ -1,11 +1,6 @@
-// Importing dependencies
 import fs from 'node:fs';
 import cheerio from 'cheerio';
 import fetch from 'node-fetch';
-
-/* const fs = require('node:fs');
-const cheerio = require('cheerio');
-const fetch = require('node-fetch'); */
 
 // 1. Create folder 'memes' if it doesn't exist yet
 try {
@@ -23,13 +18,12 @@ const response = await fetch(
 const body = await response.text();
 
 // 3. Define array and load HTML with Cheerio
-const listOfUrls = [];
 const $ = cheerio.load(body);
+const listOfUrls = [];
 
 // 4. Iterate over list of first 10 image URLs
 for (let i = 0; i < (listOfUrls.length === 1 ? 1 : 10); i++) {
   const image = $('img', body)[i].attribs.src;
-  /* console.log(image); */
 
   // 5. Fetch images from the list of URLs, save them in specified folder
   fetch(image).then((res) => {
