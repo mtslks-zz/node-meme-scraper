@@ -8,7 +8,8 @@
   "type": "module",
   "dependencies": {
     "cheerio": "^1.0.0-rc.10",
-    "node-fetch": "^3.0.0"
+    "node-fetch": "^3.0.0",
+    "progress": "^2.0.3"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^11.0.0",
