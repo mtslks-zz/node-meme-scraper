@@ -1,8 +1,8 @@
+// Importing dependencies
+import fs from 'node:fs';
 import cheerio from 'cheerio';
-import fs from 'fs';
-import got from 'got';
+import fetch from 'node-fetch';
 
-// Create new folder called ./memes
 try {
   if (!fs.existsSync('./memes')) {
     fs.mkdirSync('./memes');
@@ -11,23 +11,22 @@ try {
   console.error(err);
 }
 
-// Fetching the HTML data with promise:r
-(async () => {
-  try {
-    const response = await got(
-      'https://memegen-link-examples-upleveled.netlify.app/',
-    );
-    console.log(response.body);
-  } catch (error) {
-    console.log(error.response.body);
-  }
-})();
+const response = await fetch(
+  'https://memegen-link-examples-upleveled.netlify.app/',
+);
+const body = await response.text();
 
-// the HTML is now defined in the const body, where I need to extract the img files from the source code by putting them into an array (the first 10 images)
+const listOfUrls = [];
+const $ = cheerio.load(body);
 
-/* Next steps:
-From the HTML string, get an array of strings, which will contain the URL of the image
-Idea 1: Slice the string by certain identifiers
-Idea 2: Look for the .jpg in the string
-This could work:
-https://stackoverflow.com/questions/38444324/parsing-an-html-string-in-order-to-retrieve-and-change-the-src-url-from-an-image*/
+for (let i = 0; i < (listOfUrls.length === 1 ? 1 : 10); i++) {
+  const image = $('img', body)[i].attribs.src;
+  console.log(image);
+
+  fetch(image).then((res) => {
+    const path = './memes/' + image.split('?')[0].split('/').slice(4).join('_');
+
+    const dest = fs.createWriteStream(path);
+    res.body.pipe(dest);
+  });
+}
