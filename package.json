@@ -8,12 +8,12 @@
   "type": "module",
   "dependencies": {
     "cheerio": "^1.0.0-rc.10",
-    "node-fetch": "^3.0.0",
-    "progress": "^2.0.3"
+    "node-fetch": "^3.0.0"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^11.0.0",
     "@types/node": "^16.0.0",
+    "@types/progress": "^2.0.5",
     "@types/react": "^17.0.6",
     "@types/react-dom": "^17.0.5",
     "@typescript-eslint/eslint-plugin": "^4.21.0",

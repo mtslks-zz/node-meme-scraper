@@ -1,19 +1,6 @@
 import fs from 'node:fs';
 import cheerio from 'cheerio';
 import fetch from 'node-fetch';
-import ProgressBar from 'progress';
-
-// 0. Progress bar in CLI
-let bar = new ProgressBar(':bar', { total: 10 });
-let timer = setInterval(function () {
-  bar.tick();
-  if (bar.complete) {
-    console.log(
-      '\nScraping successfully completed - 10 images saved in ./memes.\n',
-    );
-    clearInterval(timer);
-  }
-}, 100);
 
 // 1. Create folder 'memes' if it doesn't exist yet
 try {
@@ -46,8 +33,5 @@ for (let i = 0; i < (listOfUrls.length === 1 ? 1 : 10); i++) {
     res.body.pipe(dest);
   });
 }
-
 // 6. Log success message
-/* console.log('Scraping successfully completed - 10 images saved in ./memes.'); */
-
-// Progressbar
+console.log('Scraping successfully completed - 10 images saved in ./memes.');
