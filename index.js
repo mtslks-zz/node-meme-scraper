@@ -1,7 +1,11 @@
 // Importing dependencies
-import fs from 'node:fs';
+/* import fs from 'node:fs';
 import cheerio from 'cheerio';
-import fetch from 'node-fetch';
+import fetch from 'node-fetch'; */
+
+const fs = require('node:fs');
+const cheerio = require('cheerio');
+const fetch = require('node-fetch');
 
 try {
   if (!fs.existsSync('./memes')) {
