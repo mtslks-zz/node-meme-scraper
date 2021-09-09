@@ -5,8 +5,8 @@ This meme scraper is designed to scrape the website https://memegen-link-example
 ## Dependencies
 
 - Cheerio
-- Got
+- Node-Fetch
 
 ## Usage
 
-`node scraper.js` will start the scraping process. If the application succeeds, it will confirm this with a message saying **"Scraping successfully completed - 10 images saved in ./memes."**
+`node index.js` will start the scraping process. If the application succeeds, it will confirm this with a message saying **"Scraping successfully completed - 10 images saved in ./memes."**

@@ -1,11 +1,11 @@
 // Importing dependencies
-/* import fs from 'node:fs';
+import fs from 'node:fs';
 import cheerio from 'cheerio';
-import fetch from 'node-fetch'; */
+import fetch from 'node-fetch';
 
-const fs = require('node:fs');
+/* const fs = require('node:fs');
 const cheerio = require('cheerio');
-const fetch = require('node-fetch');
+const fetch = require('node-fetch'); */
 
 try {
   if (!fs.existsSync('./memes')) {
@@ -34,3 +34,5 @@ for (let i = 0; i < (listOfUrls.length === 1 ? 1 : 10); i++) {
     res.body.pipe(dest);
   });
 }
+
+console.log('The images have been downloaded successfully to folder ./memes!');
