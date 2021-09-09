@@ -5,7 +5,7 @@ This meme scraper is designed to scrape the website https://memegen-link-example
 ## Dependencies
 
 - Cheerio
-- Node-Fetch
+- Got
 
 ## Usage
 
